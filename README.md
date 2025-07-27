@@ -1,2 +1,0 @@
-# rezo
-A social network
