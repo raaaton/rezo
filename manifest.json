@@ -1,0 +1,16 @@
+{
+  "short_name": "Rezo",
+  "name": "Rezo",
+  "theme_color": "#4A90E2",
+  "background_color": "#05141C",
+  "display": "standalone",
+  "icons": [
+      {  
+   "src": "./img/logo.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "density": "0.75"
+  }
+  ],
+  "start_url": "./index.html"
+}
