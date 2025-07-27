@@ -1,23 +1,10 @@
-name: Deploy to Hostinger via FTP
+# .github/workflows/test.yml
+name: Test Action
 
-on:
-  push:
-    branches:
-      - main  # Branche à surveiller
+on: [push]
 
 jobs:
-  ftp-deploy:
+  test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4
-        with:
-          ftp-server: ftp://213.130.145.71
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          git-ftp-args: --insecure 
+      - run: echo "Hello World"
