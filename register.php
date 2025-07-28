@@ -48,22 +48,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
-<head><title>Register</title></head>
-<body>
-<h1>Register</h1>
-<?php if (!empty($errors)): ?>
-<ul>
-  <?php foreach($errors as $error): ?>
-  <li><?=htmlspecialchars($error)?></li>
-  <?php endforeach; ?>
-</ul>
-<?php endif; ?>
-<form method="post" action="register.php">
-  <label>Username: <input type="text" name="username" required></label><br>
-  <label>Email: <input type="email" name="email" required></label><br>
-  <label>Password: <input type="password" name="password" required></label><br>
-  <button type="submit">Register</button>
-</form>
-<a href="login.php">Already have an account? Login</a>
-</body>
+    <head>
+        <title>Register</title>
+    </head>
+    <body>
+        <h1>Register</h1>
+        <?php if (!empty($errors)): ?>
+        <ul>
+            <?php foreach($errors as $error): ?>
+                <li><?=htmlspecialchars($error)?></li>
+            <?php endforeach; ?>
+        </ul>
+        <?php endif; ?>
+        <form method="post" action="register.php">
+            <label>Username: <input type="text" name="username" required></label><br>
+            <label>Email: <input type="email" name="email" required></label><br>
+            <label>Password: <input type="password" name="password" required></label><br>
+            <button type="submit">Register</button>
+        </form>
+        <a href="login.php">Already have an account? Login</a>
+    </body>
 </html>

@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php if (!empty($errors)): ?>
         <ul>
             <?php foreach($errors as $error): ?>
-            <li><?=htmlspecialchars($error)?></li>
+                <li><?=htmlspecialchars($error)?></li>
             <?php endforeach; ?>
         </ul>
         <?php endif; ?>
