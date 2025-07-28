@@ -9,3 +9,8 @@
 body {
     background-color: var(--main-bg-color);
 }
+
+input,
+button {
+    color: black;
+}
