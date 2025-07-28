@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,10 +19,14 @@
         <meta name="theme-color" content="#05141C" />
         <!--  -->
         <link rel="icon" type="image/png" href="/img/logo.png" />
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="/assets/css/styles.css" />
         <title>Home | Rezo</title>
     </head>
     <body>
+        <?php
+            echo "Welcome, " . htmlspecialchars($_SESSION['username']) . "!";
+            echo '<br><a href="logout.php">Logout</a>';
+        ?>
         <div class="topBar">
             <a href="/">
                 <img class="logo" src="" alt="" />
@@ -37,7 +50,7 @@
         <aside class="trendsForYou"></aside>
         <footer></footer>
 
-        <script src="script.js"></script>
+        <script src="/assets/js/script.js"></script>
 
         <!-- "Add to home screen" support -->
         <script type="text/javascript">

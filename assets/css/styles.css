@@ -1,5 +1,9 @@
+* {
+    color: white;
+}
+
 :root {
-  --main-bg-color: #05141C;
+    --main-bg-color: #05141c;
 }
 
 body {
