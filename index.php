@@ -72,3 +72,5 @@ if (!isset($_SESSION['user_id'])) {
         <!--  -->
     </body>
 </html>
+
+<!-- TODO: Auth Token via Cookies -->
