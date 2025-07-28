@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!--  -->
         <link rel="icon" type="image/png" href="../img/logo.png" />
         <link rel="stylesheet" href="../assets/css/styles.css" />
-        <title>Home | Rezo</title>
+        <title>Register | Rezo</title>
     </head>
     <body>
         <h1>Register</h1>
