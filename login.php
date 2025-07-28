@@ -17,11 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
         // Fetch user by username
-        $stmt = $pdo->prepare("SELECT id, username, password_hash FROM users WHERE username = ?");
+        $stmt = $pdo->prepare("SELECT id, username, password FROM users WHERE username = ?");
         $stmt->execute([$username]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && password_verify($password, $user['password_hash'])) {
+        if ($user && password_verify($password, $user['password'])) {
             // Password matches, log user in
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
