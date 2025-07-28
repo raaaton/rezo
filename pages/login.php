@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-require '/includes/db.php';
+require '../includes/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Password matches, log user in
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header("Location: /index.php");
+            header("Location: ../index.php");
             exit;
         } else {
             $errors[] = "Invalid username or password.";
@@ -48,11 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endforeach; ?>
         </ul>
         <?php endif; ?>
-        <form method="post" action="/pages/login.php">
+        <form method="post" action="login.php">
             <label>Username: <input type="text" name="username" required></label><br>
             <label>Password: <input type="password" name="password" required></label><br>
             <button type="submit">Login</button>
         </form>
-        <a href="/pages/register.php">Don't have an account? Register</a>
+        <a href="register.php">Don't have an account? Register</a>
     </body>
 </html>

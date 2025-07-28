@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-require '/includes/db.php';
+require '../includes/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($stmt->execute([$username, $email, $hash])) {
                 $_SESSION['user_id'] = $pdo->lastInsertId();
                 $_SESSION['username'] = $username;
-                header("Location: index.php");
+                header("Location: ../index.php");
                 exit;
             } else {
                 $errors[] = "Database error during registration.";
@@ -66,6 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>Password: <input type="password" name="password" required></label><br>
             <button type="submit">Register</button>
         </form>
-        <a href="login.php">Already have an account? Login</a>
+        <a href="../pages/login.php">Already have an account? Login</a>
     </body>
 </html>

@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: /pages/login.php');
+    header('Location: ./pages/login.php');
     exit;
 }
 ?>
@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_id'])) {
     <body>
         <?php
             echo "Welcome, " . htmlspecialchars($_SESSION['username']) . "!";
-            echo '<br><a href="logout.php">Logout</a>';
+            echo '<br><a href="./pages/logout.php">Logout</a>';
         ?>
         <div class="topBar">
             <a href="/">
@@ -57,7 +57,7 @@ if (!isset($_SESSION['user_id'])) {
             if ("serviceWorker" in navigator) {
                 console.log("Service worker registering...");
                 navigator.serviceWorker
-                    .register("service-worker.js")
+                    .register("./assets/js/service-worker.js")
                     .then(function (reg) {
                         console.log("Service worker successfully registered!");
                     })
