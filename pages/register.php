@@ -49,7 +49,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Register</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- "Add to home screen" support -->
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#05141C" />
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#05141C" />
+        <!--  -->
+        <link rel="icon" type="image/png" href="../img/logo.png" />
+        <link rel="stylesheet" href="../assets/css/styles.css" />
+        <title>Home | Rezo</title>
     </head>
     <body>
         <h1>Register</h1>
