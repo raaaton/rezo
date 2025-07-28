@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Password matches, log user in
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header("Location: home.php");
+            header("Location: index.php");
             exit;
         } else {
             $errors[] = "Invalid username or password.";

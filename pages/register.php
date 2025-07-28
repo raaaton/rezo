@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($stmt->execute([$username, $email, $hash])) {
                 $_SESSION['user_id'] = $pdo->lastInsertId();
                 $_SESSION['username'] = $username;
-                header("Location: home.php");
+                header("Location: index.php");
                 exit;
             } else {
                 $errors[] = "Database error during registration.";
