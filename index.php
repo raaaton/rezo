@@ -21,7 +21,11 @@ require './assets/php/auth-check.php';
     </head>
     <body>
         <?php
-            echo "<p>Welcome, " . htmlspecialchars($user['username']) . "!" . '<br><a href="./assets/php/logout.php">Logout</a></p>';
+            if (isset($user) && isset($user['username'])) {
+                echo "<p>Welcome, " . htmlspecialchars($user['username']) . "!<br><a href=\"./assets/php/logout.php\">Logout</a></p>";
+            } else {
+                echo "<p>You are not logged in. <a href=\"./pages/login.php\">Login here</a></p>";
+            }
         ?>
         <div class="topBar">
             <a href="/">
