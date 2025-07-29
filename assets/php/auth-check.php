@@ -2,7 +2,7 @@
 require __DIR__ . '/../../includes/db.php';
 
 if (!isset($_COOKIE['auth_token'])) {
-    header('Location: ../../pages/login.php');
+    header('Location: /../../pages/login.php');
     exit;
 }
 
