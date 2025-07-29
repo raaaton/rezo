@@ -22,8 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user && password_verify($password, $user['password'])) {
             $token = bin2hex(random_bytes(32));
-            // $expiry = date('Y-m-d H:i:s', time() + 3600 * 24);
-            $expiry = date('Y-m-d H:i:s', time() + 30);
+            $expiry = date('Y-m-d H:i:s', time() + 3600 * 24 * 30);
 
             $stmt = $pdo->prepare("UPDATE users SET auth_token = ?, token_expiry = ? WHERE id = ?");
             $stmt->execute([$token, $expiry, $user['id']]);
