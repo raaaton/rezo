@@ -1,10 +1,9 @@
 <?php
-require __DIR__ . '/../../includes/db.php';
+require '../../includes/db.php';
 
 if (isset($_COOKIE['auth_token'])) {
-    $stmt = $pdo->prepare("UPDATE users SET auth_token = NULL, token_expiry = NULL WHERE auth_token = ?");
+    $stmt = $pdo->prepare("DELETE FROM user_tokens WHERE token = ?");
     $stmt->execute([$_COOKIE['auth_token']]);
-
     setcookie('auth_token', '', time() - 3600, '/');
 }
 

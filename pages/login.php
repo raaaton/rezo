@@ -22,16 +22,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user && password_verify($password, $user['password'])) {
             $token = bin2hex(random_bytes(32));
-            $expiry = date('Y-m-d H:i:s', time() + 3600 * 24 * 31);
+            $expiry = date('Y-m-d H:i:s', time() + 3600 * 24 * 30);
 
-            $stmt = $pdo->prepare("UPDATE users SET auth_token = ?, token_expiry = ? WHERE id = ?");
-            $stmt->execute([$token, $expiry, $user['id']]);
+            $stmt = $pdo->prepare("INSERT INTO user_tokens (user_id, token, expires_at, user_agent, ip_address) VALUES (?, ?, ?, ?, ?)");
+            $stmt->execute([
+                $user['id'],
+                $token,
+                $expiry,
+                $_SERVER['HTTP_USER_AGENT'] ?? '',
+                $_SERVER['REMOTE_ADDR'] ?? ''
+            ]);
 
             setcookie('auth_token', $token, [
-                'expires' => time() + 3600 * 24 * 31,
+                'expires' => time() + 3600 * 24 * 30,
                 'path' => '/',
                 'secure' => false,
-                'httponly' => false,
+                'httponly' => true,
                 'samesite' => 'Strict',
             ]);
 
