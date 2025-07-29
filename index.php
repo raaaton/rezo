@@ -24,8 +24,7 @@ if (!isset($_SESSION['user_id'])) {
     </head>
     <body>
         <?php
-            echo "<p>Welcome, " . htmlspecialchars($_SESSION['username']) . "!";
-            echo '<br><a href="./pages/logout.php">Logout</a></p>';
+            echo "<p>Welcome, " . htmlspecialchars($_SESSION['username']) . "!" . '<br><a href="./pages/logout.php">Logout</a></p>';
         ?>
         <div class="topBar">
             <a href="/">
