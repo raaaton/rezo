@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../../includes/db.php';
+require __DIR__ . '/includes/db.php';
 
 if (isset($_COOKIE['auth_token'])) {
     $stmt = $pdo->prepare("DELETE FROM user_tokens WHERE token = ?");
