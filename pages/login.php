@@ -24,14 +24,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $token = bin2hex(random_bytes(32));
             $expiry = date('Y-m-d H:i:s', time() + 3600 * 24 * 30);
 
-            $stmt = $pdo->prepare("INSERT INTO user_tokens (user_id, token, expires_at, user_agent, ip_address) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([
-                $user['id'],
-                $token,
-                $expiry,
-                $_SERVER['HTTP_USER_AGENT'] ?? '',
-                $_SERVER['REMOTE_ADDR'] ?? ''
-            ]);
+            try {
+                $stmt = $pdo->prepare("INSERT INTO user_tokens (user_id, token, expires_at, user_agent, ip_address) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([
+                    $user['id'],
+                    $token,
+                    $expiry,
+                    $_SERVER['HTTP_USER_AGENT'] ?? '',
+                    $_SERVER['REMOTE_ADDR'] ?? ''
+                ]);
+            } catch (PDOException $e) {
+                die("Database error: " . $e->getMessage());
+            }
 
             setcookie('auth_token', $token, [
                 'expires' => time() + 3600 * 24 * 30,
