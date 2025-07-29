@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
-    header('Location: ./pages/login.php');
-    exit;
-}
+require './assets/php/auth-check.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
     </head>
     <body>
         <?php
-            echo "<p>Welcome, " . htmlspecialchars($_SESSION['username']) . "!" . '<br><a href="./pages/logout.php">Logout</a></p>';
+            echo "<p>Welcome, " . htmlspecialchars($user['username']) . "!" . '<br><a href="./assets/php/logout.php">Logout</a></p>';
         ?>
         <div class="topBar">
             <a href="/">
@@ -71,5 +68,3 @@ if (!isset($_SESSION['user_id'])) {
         <!--  -->
     </body>
 </html>
-
-<!-- TODO: Auth Token via Cookies -->
