@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'samesite' => 'Strict',
             ]);
 
-            header("Location: ../index.php");
+            header("Location: /index.php");
             exit;
         } else {
             $errors[] = "Invalid username or password.";
