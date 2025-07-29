@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../../includes/db.php';
+require dirname(__DIR__, 2) . '/includes/db.php';
 
 if (!isset($_COOKIE['auth_token'])) {
     header('Location: /pages/login.php');
