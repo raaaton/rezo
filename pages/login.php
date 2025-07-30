@@ -78,27 +78,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Login | Rezo</title>
 </head>
 <body>
-    <div class="content">
-    
-        <?php if (!empty($errors)): ?>
-            <ul>
-                <?php foreach($errors as $error): ?>
-                    <li><?=htmlspecialchars($error)?></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-        <div class="login-container">
-            <h1>Login</h1>
-            <form id="loginForm" method="post" action="login.php" class="login-form">
-                <i class="fa-solid fa-user form-icon"></i>
-                <input type="text" name="uname" placeholder="Username" class="form-input" required>
-                <i class="fa-solid fa-lock form-icon"></i>
-                <input type="password" name="psw" placeholder="Password" class="form-input" required>
-                <button type="submit" class="login-button form-btn">Login</button>
-                <span class="register-span">Don't have an account? <strong><a href="register.php">Register</a></strong></span>
-            </form>
-        </div>
-    </div>
+    <h1>Login</h1>
+    <?php if (!empty($errors)): ?>
+        <ul>
+            <?php foreach($errors as $error): ?>
+                <li><?=htmlspecialchars($error)?></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+    <form id="loginForm" method="post" action="login.php">
+        <label>Username: <input type="text" name="username" required></label><br>
+        <label>Password: <input type="password" name="password" required></label><br>
+        <button type="submit">Login</button>
+    </form>
+    <a href="register.php">Don't have an account? Register</a>
+
     <script src="https://kit.fontawesome.com/3ac14f7443.js" crossorigin="anonymous"></script>
 </body>
 </html>
