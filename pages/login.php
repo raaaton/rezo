@@ -1,4 +1,6 @@
 <?php
+var_dump($_COOKIE['auth_token'] ?? 'no cookie'); exit;
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -51,8 +53,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'expires' => time() + 3600 * 24 * 30,
                 'path' => '/',
                 'secure' => false,
-                'httponly' => true,
-                'samesite' => 'Strict',
+                // 'httponly' => true,
+                'samesite' => 'Lax',
+                'secure' => true,
             ]);
 
             header('Location: /index.php');
