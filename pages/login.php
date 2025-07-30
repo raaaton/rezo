@@ -45,7 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'samesite' => 'Strict',
             ]);
 
-            header("Location: /index.php");
+            header('Content-Type: application/json');
+            echo json_encode(['token' => $token, 'success' => true]);
             exit;
         } else {
             $errors[] = "Invalid username or password.";
@@ -74,11 +75,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
-    <form method="post" action="login.php">
+    <form id="loginForm" method="post" action="login.php">
         <label>Username: <input type="text" name="username" required></label><br>
         <label>Password: <input type="password" name="password" required></label><br>
         <button type="submit">Login</button>
     </form>
     <a href="register.php">Don't have an account? Register</a>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const resp = await fetch('login.php', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await resp.json();
+
+            if (data.success) {
+                localStorage.setItem('auth_token', data.token);
+                window.location.href = '/index.php';
+            } else {
+                alert('Login failed');
+            }
+        });
+    </script>
 </body>
 </html>

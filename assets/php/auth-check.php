@@ -1,4 +1,5 @@
 <?php
+session_start();
 require dirname(__DIR__, 2) . '/includes/db.php';
 
 if (!isset($_COOKIE['auth_token'])) {
@@ -23,8 +24,6 @@ if (!$user) {
     exit;
 }
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 $_SESSION['user_id'] = $user['id'];
 $_SESSION['username'] = $user['username'];
+?>
