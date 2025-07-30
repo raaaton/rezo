@@ -18,7 +18,7 @@ require __DIR__ . '/assets/php/auth-check.php';
         <meta name="theme-color" content="#05141C" />
         <!--  -->
         <link rel="icon" type="image/png" href="./assets/img/logo.png" />
-        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/main.css" />
         <title>Home | Rezo</title>
     </head>
     <body>
