@@ -14,7 +14,6 @@ if (isset($_COOKIE['auth_token'])) {
     $user = $stmt->fetch();
 
     if ($user) {
-        // Redirige vers la page principale si déjà connecté
         header('Location: /index.php');
         exit;
     }
@@ -39,18 +38,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $token = bin2hex(random_bytes(32));
             $expiry = date('Y-m-d H:i:s', time() + 3600 * 24 * 30);
 
-            try {
-                $stmt = $pdo->prepare("INSERT INTO user_tokens (user_id, token, expires_at, user_agent, ip_address) VALUES (?, ?, ?, ?, ?)");
-                $stmt->execute([
-                    $user['id'],
-                    $token,
-                    $expiry,
-                    $_SERVER['HTTP_USER_AGENT'] ?? '',
-                    $_SERVER['REMOTE_ADDR'] ?? ''
-                ]);
-            } catch (PDOException $e) {
-                die("Database error: " . $e->getMessage());
-            }
+            $stmt = $pdo->prepare("INSERT INTO user_tokens (user_id, token, expires_at, user_agent, ip_address) VALUES (?, ?, ?, ?, ?)");
+            $stmt->execute([
+                $user['id'],
+                $token,
+                $expiry,
+                $_SERVER['HTTP_USER_AGENT'] ?? '',
+                $_SERVER['REMOTE_ADDR'] ?? ''
+            ]);
 
             setcookie('auth_token', $token, [
                 'expires' => time() + 3600 * 24 * 30,
@@ -60,8 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'samesite' => 'Strict',
             ]);
 
-            header('Content-Type: application/json');
-            echo json_encode(['token' => $token, 'success' => true]);
+            header('Location: /index.php');
             exit;
         } else {
             $errors[] = "Invalid username or password.";
@@ -96,26 +90,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit">Login</button>
     </form>
     <a href="register.php">Don't have an account? Register</a>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-            const resp = await fetch('login.php', {
-                method: 'POST',
-                body: formData
-            });
-            const data = await resp.json();
-
-            if (data.success) {
-                localStorage.setItem('auth_token', data.token);
-                window.location.href = '/index.php';
-            } else {
-                alert('Login failed');
-            }
-        });
-    </script>
-    <script src="/assets/js/auth-restore.js" defer></script>
 </body>
 </html>
