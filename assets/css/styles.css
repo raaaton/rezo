@@ -28,7 +28,7 @@ body {
 .login-container {
     display: flex;
     padding: 70px;
-    background-color: #040e14;
+    background-color: rgba(4, 14, 20, 0.5);
     backdrop-filter: blur(4px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
