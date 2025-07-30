@@ -73,6 +73,6 @@ require __DIR__ . '/assets/php/auth-check.php';
                     });
             }
         </script>
-        <!--  -->
+        <script src="/assets/js/auth-restore.js" defer></script>
     </body>
 </html>
