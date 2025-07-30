@@ -72,20 +72,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <title>Register | Rezo</title>
     </head>
     <body>
-        <h1>Register</h1>
         <?php if (!empty($errors)): ?>
-        <ul>
-            <?php foreach($errors as $error): ?>
-                <li><?=htmlspecialchars($error)?></li>
-            <?php endforeach; ?>
-        </ul>
+            <ul>
+                <?php foreach($errors as $error): ?>
+                    <li><?=htmlspecialchars($error)?></li>
+                 <?php endforeach; ?>
+            </ul>
         <?php endif; ?>
-        <form method="post" action="register.php">
-            <label>Username: <input type="text" name="username" required></label><br>
-            <label>Email: <input type="email" name="email" required></label><br>
-            <label>Password: <input type="password" name="password" required></label><br>
-            <button type="submit">Register</button>
-        </form>
-        <a href="../pages/login.php">Already have an account? Login</a>
+        <div class="content">
+            <div class="login-container">
+                <h1 class="login-h1">Register</h1>
+                <form class="login-form">
+                    <i class="fa-solid fa-email form-icon"></i>
+                    <input type="email" name="email" placeholder="Email" class="form-input" required>
+                    <i class="fa-solid fa-user form-icon"></i>
+                    <input type="text" name="username" placeholder="Username" class="form-input" required>
+                    <i class="fa-solid fa-lock form-icon"></i>
+                    <input type="password" name="password" placeholder="Password" class="form-input" required>
+                    <button class="login-button" type="submit" class="form-btn" class="login-button">Register</button>
+                </form>
+                <span class="register-span">Don't have an account? <strong><a href="login.php">Login</a></strong></span>
+            </div>
+        </div>
+        
+        <script src="https://kit.fontawesome.com/3ac14f7443.js" crossorigin="anonymous"></script>
     </body>
 </html>
