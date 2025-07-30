@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="login-container">
                 <h1 class="login-h1">Register</h1>
                 <form class="login-form">
-                    <i class="fa-solid fa-email form-icon"></i>
+                    <i class="fa-solid fa-envelope form-icon"></i>
                     <input type="email" name="email" placeholder="Email" class="form-input" required>
                     <i class="fa-solid fa-user form-icon"></i>
                     <input type="text" name="username" placeholder="Username" class="form-input" required>
