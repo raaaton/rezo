@@ -75,6 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!--  -->
     <link rel="icon" type="image/png" href="../img/logo.png" />
     <link rel="stylesheet" href="../assets/css/loginRegister.css" />
+    <link rel="stylesheet" href="../assets/css/loader.css" />
     <title>Login | Rezo</title>
 </head>
 <body>
