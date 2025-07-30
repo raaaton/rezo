@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
-    <form id="loginForm" method="post" action="login.php">
+    <form id="loginForm" method="post" action="login.php" class="login-form">
         <i class="fa-solid fa-user form-icon"></i>
         <input type="text" name="uname" placeholder="Username" class="form-input" required>
         <i class="fa-solid fa-lock form-icon"></i>
