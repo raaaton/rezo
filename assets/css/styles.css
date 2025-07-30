@@ -63,6 +63,7 @@ body {
     border-radius: 20px;
 }
 
+.login-form .email-input,
 .login-form .username-input {
     margin-bottom: 0;
 }
