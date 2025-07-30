@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require dirname(__DIR__, 1) . '/includes/db.php';
+require dirname(__DIR__, 2) . '/includes/db.php';
 
 header('Content-Type: application/json');
 
