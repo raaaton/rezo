@@ -101,5 +101,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         });
     </script>
+    <script src="/assets/js/auth-restore.js" defer></script>
 </body>
 </html>
