@@ -28,7 +28,7 @@ body {
 .login-container {
     display: flex;
     padding: 70px;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #02080b;
     backdrop-filter: blur(4px);
     border: 2px solid var(--background-color-input);
     border-radius: 20px;
