@@ -4,7 +4,21 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-require __DIR__ . '/includes/db.php';
+require dirname(__DIR__, 1) . '/includes/db.php';
+
+if (isset($_COOKIE['auth_token'])) {
+    $token = $_COOKIE['auth_token'];
+
+    $stmt = $pdo->prepare("SELECT user_id FROM user_tokens WHERE token = ? AND expires_at > NOW()");
+    $stmt->execute([$token]);
+    $user = $stmt->fetch();
+
+    if ($user) {
+        // Redirige vers la page principale si déjà connecté
+        header('Location: /index.php');
+        exit;
+    }
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
