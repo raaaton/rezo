@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </ul>
         <?php endif; ?>
         <div class="login-container">
-            <h1>Login</h1>
+            <h1 class="login-h1">Login</h1>
             <form id="loginForm" method="post" action="login.php" class="login-form">
                 <i class="fa-solid fa-user form-icon"></i>
                 <input type="text" name="username" placeholder="Username" class="form-input" required>
