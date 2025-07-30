@@ -1,5 +1,3 @@
-<!-- TODO: Add dual auth token storage with cookies + localStorage for PWA persistent login -->
-
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);

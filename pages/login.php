@@ -70,8 +70,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- "Add to home screen" support -->
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#05141C" />
+    <!--  -->
     <link rel="icon" type="image/png" href="../img/logo.png" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <title>Login | Rezo</title>

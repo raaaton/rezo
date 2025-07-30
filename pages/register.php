@@ -14,7 +14,6 @@ if (isset($_COOKIE['auth_token'])) {
     $user = $stmt->fetch();
 
     if ($user) {
-        // Redirige vers la page principale si déjà connecté
         header('Location: /index.php');
         exit;
     }
@@ -26,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     $errors = [];
 
-    // Basic validation
     if (empty($username) || strlen($username) < 3) {
         $errors[] = "Username must be at least 3 characters.";
     }
@@ -38,13 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        // Check if username or email already exists
         $stmt = $pdo->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
         $stmt->execute([$username, $email]);
         if ($stmt->fetch()) {
             $errors[] = "Username or email already taken.";
         } else {
-            // Insert new user with hashed password
             $hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
             if ($stmt->execute([$username, $email, $hash])) {
