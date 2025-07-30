@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <meta name="theme-color" content="#05141C" />
         <!--  -->
         <link rel="icon" type="image/png" href="../img/logo.png" />
-        <link rel="stylesheet" href="../assets/css/styles.css" />
+        <link rel="stylesheet" href="../assets/css/loginRegister.css" />
         <title>Register | Rezo</title>
     </head>
     <body>
@@ -94,7 +94,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <span class="register-span">Don't have an account? <strong><a href="login.php">Login</a></strong></span>
             </div>
         </div>
+
+        <div class="loader"></div>
         
         <script src="https://kit.fontawesome.com/3ac14f7443.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/loader.js"></script>
     </body>
 </html>
