@@ -78,25 +78,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Login | Rezo</title>
 </head>
 <body>
-    <?php if (!empty($errors)): ?>
-        <ul>
-            <?php foreach($errors as $error): ?>
-                <li><?=htmlspecialchars($error)?></li>
+    <div class="content">
+    
+        <?php if (!empty($errors)): ?>
+            <ul>
+                <?php foreach($errors as $error): ?>
+                    <li><?=htmlspecialchars($error)?></li>
                 <?php endforeach; ?>
             </ul>
-            <?php endif; ?>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm" method="post" action="login.php" class="login-form">
-            <i class="fa-solid fa-user form-icon"></i>
-            <input type="text" name="uname" placeholder="Username" class="form-input" required>
-            <i class="fa-solid fa-lock form-icon"></i>
-            <input type="password" name="psw" placeholder="Password" class="form-input" required>
-            <button type="submit" class="login-button form-btn">Login</button>
-            <span class="register-span">Don't have an account? <strong><a href="register.php">Register</a></strong></span>
-        </form>
+        <?php endif; ?>
+        <div class="login-container">
+            <h1>Login</h1>
+            <form id="loginForm" method="post" action="login.php" class="login-form">
+                <i class="fa-solid fa-user form-icon"></i>
+                <input type="text" name="uname" placeholder="Username" class="form-input" required>
+                <i class="fa-solid fa-lock form-icon"></i>
+                <input type="password" name="psw" placeholder="Password" class="form-input" required>
+                <button type="submit" class="login-button form-btn">Login</button>
+                <span class="register-span">Don't have an account? <strong><a href="register.php">Register</a></strong></span>
+            </form>
+        </div>
     </div>
-
     <script src="https://kit.fontawesome.com/3ac14f7443.js" crossorigin="anonymous"></script>
 </body>
 </html>
