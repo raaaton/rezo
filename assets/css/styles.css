@@ -63,7 +63,7 @@ body {
     border-radius: 20px;
 }
 
-.login-form input:first-of-type {
+.login-form .username-input {
     margin-bottom: 0;
 }
 

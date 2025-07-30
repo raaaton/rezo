@@ -91,9 +91,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h1 class="login-h1">Login</h1>
             <form id="loginForm" method="post" action="login.php" class="login-form">
                 <i class="fa-solid fa-user form-icon"></i>
-                <input type="text" name="username" placeholder="Username" class="form-input" required>
+                <input type="text" name="username" placeholder="Username" class="form-input username-input" required>
                 <i class="fa-solid fa-lock form-icon"></i>
-                <input type="password" name="password" placeholder="Password" class="form-input" required>
+                <input type="password" name="password" placeholder="Password" class="form-input password-input" required>
                 <button type="submit" class="login-button form-btn">Login</button>
                 <span class="register-span">Don't have an account? <strong><a href="register.php">Register</a></strong></span>
             </form>

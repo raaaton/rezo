@@ -84,11 +84,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h1 class="login-h1">Register</h1>
                 <form class="login-form">
                     <i class="fa-solid fa-envelope form-icon"></i>
-                    <input type="email" name="email" placeholder="Email" class="form-input" required>
+                    <input type="email" name="email" placeholder="Email" class="form-input email-input" required>
                     <i class="fa-solid fa-user form-icon"></i>
-                    <input type="text" name="username" placeholder="Username" class="form-input" required>
+                    <input type="text" name="username" placeholder="Username" class="form-input username-input" required>
                     <i class="fa-solid fa-lock form-icon"></i>
-                    <input type="password" name="password" placeholder="Password" class="form-input" required>
+                    <input type="password" name="password" placeholder="Password" class="form-input password-input" required>
                     <button class="login-button" type="submit" class="form-btn" class="login-button">Register</button>
                 </form>
                 <span class="register-span">Don't have an account? <strong><a href="login.php">Login</a></strong></span>
