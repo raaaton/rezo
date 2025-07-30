@@ -103,5 +103,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="loader"></div>
 
     <script src="https://kit.fontawesome.com/3ac14f7443.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/loader.js"></script>
 </body>
 </html>
