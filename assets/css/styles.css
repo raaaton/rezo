@@ -42,7 +42,7 @@ body {
 }
 
 .login-h1 {
-    margin: 0 0 25px 0; /* Margin bottom 25px*/
+    margin: 0 0 25px 0; /* Margin bottom 25px */
 }
 
 .login-form {
@@ -63,7 +63,7 @@ body {
 }
 
 .login-form input::placeholder {
-    font-family: Poppins, boxicons;
+    font-family: "Poppins", "boxicons";
     color: inherit;
 }
 
