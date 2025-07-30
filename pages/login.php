@@ -51,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'expires' => time() + 3600 * 24 * 30,
                 'path' => '/',
                 'secure' => false,
-                // 'httponly' => true,
                 'samesite' => 'Lax',
                 'secure' => true,
             ]);
