@@ -54,6 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+if ($_SERVER['REQUEST_URI'] === '/pages/register.php') {
+    header("Location: /register", true, 301);
+    exit();
+}/*  */
 ?>
 
 <!DOCTYPE html>

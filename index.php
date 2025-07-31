@@ -7,6 +7,11 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 require __DIR__ . '/assets/php/auth-check.php';
+
+if ($_SERVER['REQUEST_URI'] === '/index.php') {
+    header("Location: /home", true, 301);
+    exit();
+}
 ?>
 
 <!DOCTYPE html>

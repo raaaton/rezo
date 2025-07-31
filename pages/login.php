@@ -62,6 +62,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+if ($_SERVER['REQUEST_URI'] === '/pages/login.php') {
+    header("Location: /login", true, 301);
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
