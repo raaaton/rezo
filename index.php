@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_URI'] === '/index.php') {
         ?>
         <div class="topBar">
             <a href="/">
-                <img class="logo" src="./assets/img/logo.png" alt="Rezo logo" />
+                <img class="logo" src="./assets/img/logoText.png" alt="Rezo logo" />
             </a>
             <div class="search"></div>
             <nav>
