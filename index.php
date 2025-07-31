@@ -1,3 +1,4 @@
+<!-- TODO: Fix the PWA logo -->
 <!-- TODO: Add the home page and style it -->
 <!-- TODO: Add responsive for login and register pages -->
 
