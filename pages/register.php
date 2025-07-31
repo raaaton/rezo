@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_URI'] === '/pages/register.php') {
                     <input type="password" name="password" placeholder="Password" class="form-input password-input" required>
                     <button class="login-button" type="submit" class="form-btn" class="login-button">Register</button>
                 </form>
-                <span class="register-span">Don't have an account? <strong><a href="login.php">Login</a></strong></span>
+                <span class="register-span">Don't have an account? <strong><a href="/login">Login</a></strong></span>
             </div>
         </div>
 
