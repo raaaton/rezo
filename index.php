@@ -22,6 +22,7 @@ require __DIR__ . '/assets/php/auth-check.php';
         <!--  -->
         <link rel="icon" type="image/png" href="./assets/img/logo.png" />
         <link rel="stylesheet" href="./assets/css/main.css" />
+        <link rel="stylesheet" href="./assets/css/loader.css" />
         <title>Home | Rezo</title>
     </head>
     <body>
@@ -55,6 +56,8 @@ require __DIR__ . '/assets/php/auth-check.php';
         <aside class="trendsForYou"></aside>
         <footer></footer>
 
+        <div class="loader"></div>
+
         <script src="/assets/js/script.js"></script>
 
         <!-- "Add to home screen" support -->
@@ -74,6 +77,8 @@ require __DIR__ . '/assets/php/auth-check.php';
                     });
             }
         </script>
+        <!--  -->
+        <script src="/assets/js/loader.js"></script>
         <script src="/assets/js/auth-restore.js" defer></script>
     </body>
 </html>
