@@ -68,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <meta name="theme-color" content="#05141C" />
         <!--  -->
         <link rel="icon" type="image/png" href="../img/logo.png" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
         <link rel="stylesheet" href="../assets/css/loader.css" />
         <link rel="stylesheet" href="../assets/css/loginRegister.css" />
         <title>Register | Rezo</title>

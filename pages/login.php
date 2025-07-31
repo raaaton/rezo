@@ -66,44 +66,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- "Add to home screen" support -->
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#05141C" />
-    <!--  -->
-    <link rel="icon" type="image/png" href="../img/logo.png" />
-    <link rel="stylesheet" href="../assets/css/loader.css" />
-    <link rel="stylesheet" href="../assets/css/loginRegister.css" />
-    <title>Login | Rezo</title>
-</head>
-<body>
-    <div class="content">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- "Add to home screen" support -->
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#05141C" />
+        <!--  -->
+        <link rel="icon" type="image/png" href="../img/logo.png" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <link rel="stylesheet" href="../assets/css/loader.css" />
+        <link rel="stylesheet" href="../assets/css/loginRegister.css" />
+        <title>Login | Rezo</title>
+    </head>
+    <body>
+        <div class="content">
 
-        <?php if (!empty($errors)): ?>
-            <ul>
-                <?php foreach($errors as $error): ?>
-                    <li><?=htmlspecialchars($error)?></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-        <div class="login-container">
-            <h1 class="login-h1">Login</h1>
-            <form id="loginForm" method="post" action="login.php" class="login-form">
-                <i class="fa-solid fa-user form-icon"></i>
-                <input type="text" name="username" placeholder="Username" class="form-input username-input" required>
-                <i class="fa-solid fa-lock form-icon"></i>
-                <input type="password" name="password" placeholder="Password" class="form-input password-input" required>
-                <button type="submit" class="login-button form-btn">Login</button>
-                <span class="register-span">Don't have an account? <strong><a href="register.php">Register</a></strong></span>
-            </form>
+            <?php if (!empty($errors)): ?>
+                <ul>
+                    <?php foreach($errors as $error): ?>
+                        <li><?=htmlspecialchars($error)?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+            <div class="login-container">
+                <h1 class="login-h1">Login</h1>
+                <form id="loginForm" method="post" action="login.php" class="login-form">
+                    <i class="fa-solid fa-user form-icon"></i>
+                    <input type="text" name="username" placeholder="Username" class="form-input username-input" required>
+                    <i class="fa-solid fa-lock form-icon"></i>
+                    <input type="password" name="password" placeholder="Password" class="form-input password-input" required>
+                    <button type="submit" class="login-button form-btn">Login</button>
+                    <span class="register-span">Don't have an account? <strong><a href="register.php">Register</a></strong></span>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <div class="loader"></div>
+        <div class="loader"></div>
 
-    <script src="https://kit.fontawesome.com/3ac14f7443.js" crossorigin="anonymous"></script>
-    <script src="../assets/js/loader.js"></script>
-</body>
+        <script src="https://kit.fontawesome.com/3ac14f7443.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/loader.js"></script>
+    </body>
 </html>
