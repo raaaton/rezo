@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_URI'] === '/pages/login.php') {
             <?php endif; ?>
             <div class="login-container">
                 <h1 class="login-h1">Login</h1>
-                <form id="loginForm" method="post" action="login.php" class="login-form">
+                <form id="loginForm" method="post" action="/login" class="login-form">
                     <i class="fa-solid fa-user form-icon"></i>
                     <input type="text" name="username" placeholder="Username" class="form-input username-input" required>
                     <i class="fa-solid fa-lock form-icon"></i>
