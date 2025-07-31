@@ -2,7 +2,9 @@
 
 :root {
     --main-bg-color: #05141c;
-    --white: #e6e6f7;
+    --highlight-bg-color: #1B2730;
+    --light-bg-color: #6390AF;
+    --white: #E6E6F7;
 }
 
 body {
@@ -11,6 +13,8 @@ body {
     font-family: "Poppins", "Space Grotesk", sans-serif;
     height: 100%;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -22,6 +26,85 @@ a:hover {
     text-decoration: underline;
 }
 
+.topBar {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+}
+
 .logo {
-    height: 32px;
+    height: 30px;
+}
+
+.logo img {
+    height: inherit;
+}
+
+.searchBar {
+    position: relative;
+    color: var(--white);
+    font-weight: 600;
+    width: 150px;
+    height: 30px;
+    background-color: var(--highlight-bg-color);
+    border-radius: 8px;
+    border: none;
+    padding: 5px 35px;
+    margin-right: auto;
+}
+
+.searchBar:focus {
+    outline: 3px rgba(99, 145, 175, 0.25) solid;
+}
+
+.searchBar::placeholder {
+    color: var(--light-bg-color);
+    font-weight: 600;
+}
+
+.searchBarIcon {
+    position: relative;
+    top: 4px;
+    left: -216px;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.link.selected {
+    color: var(--main-bg-color);
+    background-color: var(--white);
+    outline: 0px solid var(--white);
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+.link.selected:hover {
+    /* padding: 12px 20px; */
+    outline: 4px solid var(--white);
+}
+
+.link.selected:hover a {
+    text-decoration: none;
+}
+
+.link.selected a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
